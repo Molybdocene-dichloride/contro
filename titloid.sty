@@ -1,0 +1,178 @@
+\ProvidesPackage{titloid}
+
+\newenvironment{titloid} {
+  \begin{center}
+    \def\baselinestretch{0.5}\fontsize{10pt}{10pt}\selectfont
+    МИНИСТЕРСТВО НАУКИ И ВЫСШЕГО ОБРАЗОВАНИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ \\
+    \fontsize{11pt}{11pt}\selectfont
+федеральное государственное автономное образовательное учреждение \\
+высшего образования \\
+\textbf{<<Северный (Арктический) федеральный университет имени М.В. Ломоносова>>}
+\end{center}
+\fontsize{13pt}{13pt}\selectfont
+} {
+  \begin{center}
+    \phantom{dd}
+
+    \phantom{dd}
+
+    \phantom{dd}
+
+    Архангельск 2022
+  \end{center}
+}
+
+\newcommand{\school}[1] {
+  \begin{center}
+    \underline{           #1            } \\
+  $^\text{(наименование высшей школы / филиала / института / колледжа)}$
+  \end{center}
+}
+\newcommand{\work}[1] {
+  \fontsize{15pt}{15pt}\selectfont
+  \begin{center}
+    \textbf{#1} \\
+    \phantom{ыы}
+  \end{center}
+}
+
+\newcommand{\theme}[2] {
+  \fontsize{12pt}{12pt}\selectfont
+  \begin{tabular}{|p{2cm}| p{9cm}| p{6.6cm}}
+    \multicolumn{2}{|l|}{По дисциплине/междисциплинарному курсу/модулю} & #1 \\
+    \multicolumn{2}{|c|}{} & \\
+    \multicolumn{2}{|c|}{} & \\
+    На тему & #2 & \\
+    & & \\
+  \end{tabular}
+  \fontsize{13pt}{13pt}\selectfont \\
+    \phantom{ыы}
+}
+
+\newcommand{\maker}[1] {
+  Выполнил (-а) обучающийся (-аяся): \\
+  #1
+}
+
+\newcommand{\spicial}[1] {
+  Направление подготовки / специальность: \\
+  #1
+}
+
+\newcommand{\course}[1] {
+  Курс: #1
+}
+
+\newcommand{\group}[1] {
+  Группа: #1
+}
+
+\newcommand{\ruler}[1] {
+  Руководитель: \\
+  #1
+}
+
+\newcommand{\core}[6] {
+  \def\baselinestretch{0.6}\fontsize{12pt}{12pt}\selectfont
+  \begin{raggedright}
+  \begin{tabular}{|l| l| l| l| l| l|}
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{\maker{#1}}} \\ \cline{4-6}
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|c|}{$^\text{(Ф.И.О.)}$} \\
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{\spicial{#2}}} \\ \cline{4-6}
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|c|}{$^\text{(код и наименование)}$} \\
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{\course{#3}}} \\ \cline{4-6}
+    \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{\group{#4}}} \\ \cline{4-6}
+    \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{}} \\ \cline{4-6}
+     \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{\parbox{10cm}{\ruler{#5}}} \\ \cline{4-6}
+    \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|c|}{$^\text{(Ф.И.О. руководителя, должность / уч. степень / звание)}$} \\
+    \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{} \\
+    \multicolumn{3}{|c|}{\parbox{6cm}{$ва$}} & \multicolumn{3}{|l|}{} \\
+     Отметка о зачете & & \multicolumn{2}{|l|}{} & &\\ \cline{3-4}\cline{6-6}
+     & & \multicolumn{2}{|c|}{$^\text{(отметка прописью)}$} & & $^\text{(дата)}$ \\
+     Руководитель & & \multicolumn{2}{|l|}{} & & #6 \\ \cline{3-4}\cline{6-6}
+     & & \multicolumn{2}{|c|}{$^\text{(подпись руководителя)}$} & & $^\text{(инициалы, фамилия)}$ \\
+  \end{tabular}
+  \end{raggedright}
+  \fontsize{13pt}{13pt}\selectfont
+}
+
+\newcommand{\reaction}[3] {
+  \TitleStyle{#1}
+
+  \mainStyle{Общий вид реакции}
+
+  %\mainStyle{При #4 в качестве основного продукта образуется #5:}
+  
+  #2
+
+  \mechStyle{Механизм реакции}
+
+  #3
+}
+
+\newcommand\TitleStyle[1]{
+  \setlength{\leftskip}{12.5mm}
+  \setlength{\rightskip}{10mm}
+  \setlength{\parindent}{0mm}
+
+  %\sectionfont{\MakeUppercase \fontsize{12pt}{12pt}\selectfont}
+  \section{#1}
+
+  \setlength{\leftskip}{0mm}
+  \setlength{\rightskip}{0mm}
+  
+  %\setlength{\parindent}{12.5pt}
+  %\setlength{\parskip}{15pt}
+}
+\newcommand\mainStyle[1]{
+  \setlength{\leftskip}{12.5mm}
+  \setlength{\rightskip}{10mm}
+  \setlength{\parindent}{0mm}
+ 
+  \subsection{#1}
+}
+\newcommand\mechStyle[1]{
+  \setlength{\leftskip}{12.5mm}
+  \setlength{\rightskip}{10mm}
+  \setlength{\parindent}{0mm}
+  
+  \subsection{#1}
+  
+  \stepcounter{title}
+}
+
+\newcommand\formul[1]{
+  \setlength{\leftskip}{0mm}
+  \setlength{\rightskip}{0mm}
+  \setlength{\parskip}{12pt}
+  \setlength{\parindent}{0mm}
+  %\begin{tabular}{|P{15cm}|p{4cm}|}
+    %#1 & (\arabic{chem}) \\
+     %    \end{tabular}
+
+  \begin{equation}
+    \begin{gathered}
+      #1
+    \end{gathered}
+  \end{equation}
+  
+  \stepcounter{chem}
+  \setcounter{prevformula}{1}
+  %\hrulefill
+}
+
+\newcommand\mStyle[1]{
+  \setlength{\leftskip}{0mm}
+  \setlength{\rightskip}{0mm}
+  %\hrulefill
+  \ifthenelse{\equal{\value{prevformula}}{1}}
+  {% True case
+    \setlength{\parskip}{10pt} %costyl, 12pt
+  }
+  {% false case
+    \setlength{\parskip}{0pt}
+  }
+  \setlength{\parindent}{12.5mm}
+  \par #1
+  \setcounter{prevformula}{0}
+}

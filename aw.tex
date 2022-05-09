@@ -1,0 +1,254 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{polyglossia}
+%\usepackage{array}
+\usepackage{graphicx}
+
+\usepackage{setspace}
+\usepackage[explicit]{titlesec}
+\usepackage{titletoc}
+\usepackage{multirow}
+\usepackage{listings,array,varwidth}
+\usepackage{ifthen}
+
+\usepackage{amsmath}
+
+\usepackage{mhchem}
+\usepackage{chemfig}
+
+\usepackage{titloid}
+
+\renewcommand{\baselinestretch}{1}
+
+\geometry{a4paper, portrait, margin=30mm, rmargin=15mm, bmargin=20mm, tmargin=20mm}
+%\setlength{\textheight}{2mm}
+
+\usetikzlibrary{decorations.markings}
+
+\setmainlanguage{russian}
+
+\setmainfont{Times New Roman}
+\setmathfont{Times New Roman}
+
+\setstretch{1.5}
+
+\usepackage{tocloft}
+
+\renewcommand\cftsecfont{\normalfont}
+\renewcommand\cftsecpagefont{\normalfont}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
+\renewcommand\cftsecdotsep{\cftdot}
+\renewcommand\cftsubsecdotsep{\cftdot}
+
+\newfontfamily\sectionfont{Times New Roman}
+
+\titleformat{\section}{\fontsize{12}{12}\bfseries\sectionfont}{\thesection \quad \MakeUppercase{#1}}{.5em}{}
+\titleformat{\subsection}{\fontsize{12}{12}\sectionfont}{\thesubsection \quad #1}{.5em}{}
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+
+\makeatletter
+\addto\captionsrussian@modern{\renewcommand{\contentsname}{\fontsize{12pt}{12pt}\selectfont ОГЛАВЛЕНИЕ}}
+\makeatother
+
+\begin{document}
+\begin{titloid}
+  \fontsize{12pt}{12pt}\selectfont
+  \school{Высшая школа естественных наук и технологий}
+  \fontsize{13pt}{13pt}\selectfont
+  \work{КОНТРОЛЬНАЯ РАБОТА}
+  \fontsize{13pt}{13pt}\selectfont
+  \theme{Органическая химия}{Механизмы органических реакций}
+  
+    \core{ППРПРПАРА}{18.03.01 Химическая технология}{2}{301015}{Вешняков Вячеслав Александрович, проф., к.х.н.}{В.А. Вешняков} 
+  \end{titloid}
+
+  \newpage
+
+  \begin{center} \uppercase{Лист для замечаний} \end{center}
+  
+  \newpage
+  
+  \setlength{\parskip}{0pt}
+  \tableofcontents
+
+  \newpage
+
+  \TitleStyle{Задание}
+  
+  Напишите уравнения реакций, указав условия их протекания, побочные продукты при их наличии и назвав органические вещества, а также приведите их механизмы:
+
+  1 Монохлорирование изобутана
+  
+  2 Бромирование циклопентена
+  
+  3 Гидробромирование гексадиена-1,3
+  
+  4 Мононитрование метилбензола
+  
+  \newpage
+  
+  \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+  \newcounter{title} \setcounter{title}{1} \newcounter{chem} \setcounter{chem}{1} \newcounter{prevformula} \setcounter{prevformula}{0}
+  
+  \def\baselinestretch{1.5}\fontsize{12pt}{12pt}\selectfont
+  \setcharge{extra sep =5pt}
+  \reaction{Монохлорирование изобутана}{
+  \mStyle{При монохлорировании 2-метилпропана(изобутана) при облучении ультрафиолетовым излучением в качестве основного продукта образуется 2-метил-1-хлорпропан, а в качестве побочного продукта - 2-метил-2-хлорпропан:}
+    
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]} ->[Cl_2][\parbox{14px}{\fontsize{8pt}{8pt}\selectfont $t° -HCl$}] \chemfig{-[:30](-[:90])-[:-30](-[:30]Cl)} + \chemfig{-[:30](-[:90])(-[:30]Cl)-[:-30]}}}
+    \mStyle{При монохлорировании 2-метилпропана(изобутана) при нагревании в качестве основного продукта образуется 2-метил-2-хлорпропан, а в качестве побочного продукта - 2-метил-1-хлорпропан:}
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]} ->[Cl_2][\parbox{14px}{\fontsize{8pt}{8pt}\selectfont $hv -HCl$}] \chemfig{-[:30](-[:90])(-[:30]Cl)-[:-30]} + \chemfig{-[:30](-[:90])-[:-30](-[:30]Cl)}}}
+    
+  }{\mStyle{Реакция протекает по механизму радикального замещения ($S_R$) как цепной радикальный процесс и включает следующие стадии:}
+    \mStyle{– инициирование цепи:}
+    
+    \formul{\ce{Cl_2 -> Cl^{.} + Cl^{.}}}
+    
+    \mStyle{– развитие цепи:}
+    
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]} ->[Cl^{.}][-HCl] \chemfig{-[:30]\charge{-90=\.}{}(-[:90])-[:-30]}}}
+    
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]} ->[Cl^{.}][-HCl] \chemfig{-[:30](-[:90])-[:-30]\charge{-90=\.}{}}}}
+
+    \formul{\ce{\chemfig{-[:30]\charge{-90=\.}{}(-[:90])-[:-30]} ->[Cl_2][-Cl^{.}] \chemfig{-[:30](-[:90])(-[:30]Cl)-[:-30]}}}
+
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]\charge{-90=\.}{}} ->[Cl_2][-Cl^{.}] \chemfig{-[:30](-[:90])-[:-30](-[:30]Cl)}}}
+    
+    \mStyle{– обрыв цепи:}
+
+    \formul{\ce{\chemfig{-[:30]\charge{-90=\.}{}(-[:90])-[:-30]} ->[Cl^{.}] \chemfig{-[:30](-[:90])(-[:30]Cl)-[:-30]}}}
+
+    \formul{\ce{\chemfig{-[:30](-[:90])-[:-30]\charge{-90=\.}{}} ->[Cl^{.}] \chemfig{-[:30](-[:90])-[:-30](-[:30]Cl)}}}
+
+    \formul{\ce{Cl^{.} + Cl^{.} -> Cl_2}}
+  }
+
+\newpage
+
+\reaction{Бромирование циклопентена}{
+  \mStyle{При бромировании циклопентена образуется 1,2-дибромциклопентан}
+  \formul{\ce{\chemfig{*5(-=---)} ->[Br_2][] \chemfig{*5(-(-[:-55]Br)-(-[:5]Br)---)}}}
+}{\mStyle{Реакция протекает по механизму электрофильного присоединения ($A_E$) и включает следующие стадии:}
+  \mStyle{– образование π-комплекса:}
+  
+  \formul{\ce{\chemfig{*5(-=---)} <-->[Br_2][] \chemfig{?-[:90]-[:20]-[:-55]=[:-125,.5](-[:-30,0.7,,,->]Br-[:-30,0.7,,,,]Br)=[:-125,.5]?}}}
+  
+  \mStyle{– образование σ-комплекса (карбкатиона, медленная, скорость-лимитирующая стадия):}
+  
+  \formul{\ce{\chemfig{?-[:90]-[:20]-[:-55]=[:-125,.5](-[:-30,0.7,,,->]Br-[:-30,0.7,,,]Br)=[:-125,.5]?} ->[][\text{$-Br^⊖$}] \chemfig{*5(-\charge{-90=$⊕$}{}-(-[:5]Br)---)} <--> \chemfig{*5(-(-[:-55]Br)-\charge{0=$⊕$}{}---)} <--> \chemfig{*5(-*3(-Br\charge{80:5pt=$⊕$}{}-)----)}}}
+  
+  \mStyle{– образование продукта:}
+  
+  \formul{\ce{\chemfig{*5(-\charge{-90=$⊕$}{}-(-[:5]Br)---)} ->[\text{$Br^⊖$}] \chemfig{*5(-(-[:-55]Br)-(-[:5]Br)---)}}}
+}
+
+\newpage
+
+\pgfdeclaredecoration{ddbond}{initial}{
+  \state{initial}[width=4pt]{
+    \pgfpathlineto{\pgfpoint{4pt}{0pt}}
+    \pgfpathmoveto{\pgfpoint{2pt}{2pt}}
+    \pgfpathlineto{\pgfpoint{4pt}{2pt}}
+    \pgfpathmoveto{\pgfpoint{4pt}{0pt}}
+  }
+  \state{final}{
+    \pgfpathlineto{\pgfpointdecoratedpathlast}
+  }
+}
+\tikzset{lddbond/.style={decorate, decoration=ddbond}}
+\tikzset{rddbond/.style={decorate, decoration={ddbond, mirror}}}
+
+\reaction{Гидробромирование гексадиена-1,3}{
+  \mStyle{При гидробромировании гексадиена-1,3 в качестве основных продуктов образуются 3-бромгексен-1, 1\nobreakdash-бромгексен\nobreakdash-2, 2\nobreakdash-бромгексен\nobreakdash-3 и  4-бромгексен\nobreakdash-2, а в качестве побочных продуктов - 4\nobreakdash-бромгексен\nobreakdash-1 и 1\nobreakdash-бромгексен\nobreakdash-3}
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30]-[:-30]-[:30]} ->[HBr][] \chemfig{=[:30]-[:-30](-[:-90]Br)-[:30]-[:-30]-[:30]} + \\ + \chemfig{(-[:150]Br)-[:30]=[:-30]-[:30]-[:-30]-[:30]} + \chemfig{-[:30](-[:90]Br)-[:-30]=[:30]-[:-30]-[:30]} + \\ + \chemfig{-[:30]=[:-30]-[:30](-[:90]Br)-[:-30]-[:30]} + \chemfig{=[:30]-[:-30]-[:30](-[:90]Br)-[:-30]-[:30]} + \\ + \chemfig{(-[:150]Br)-[:30]-[:-30]=[:30]-[:-30]-[:30]}}}
+}{\mStyle{Реакция протекает по механизму электрофильного присоединения ($A_E$) и включает следующие стадии (пример атаки электрофилом одной из 2 C=C-связей):}
+ \mStyle{– образование π-комплекса:}
+  
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30]-[:-30]-[:30]} <-->[HBr] \chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]}}}
+
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30]-[:-30]-[:30]} <-->[HBr] \chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]}}}
+  
+  \mStyle{– образование σ-комплексов (карбкатионов аллильного типа), стабилизированных резонансом (медленная, скорость-лимитирующая стадия):}
+  
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]\charge{-90=$\scriptstyle\oplus$}{}-[:30]-[:-30]-[:30]} <-> \\\\ <-> \chemfig{\charge{-90=$\scriptstyle\oplus$}{}-[:30]=[:-30]-[:30]-[:-30]-[:30]} \text{≡} \chemfig{\text{\charge{-90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:30,,,,,rddbond]-[:-30,,,,,rddbond]\text{\charge{-90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:30]-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30,,,,,rddbond]\text{\charge{-90=$\scriptstyle\oplus$}{}}-[:-30,,,,,rddbond]-[:30]-[:-30]-[:30]} }}
+%\\\\
+  \formul{\ce{\chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]=[:30]-[:-30]-[:30]} <-> \\\\\\ <-> \chemfig{-[:30]=[:-30]-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]-[:30]} \text{≡} \chemfig{-[:30]\text{\charge{90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:-30,,,,,lddbond]-[:30,,,,,lddbond]\text{\charge{90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30]-[:-30,,,,,lddbond]\charge{90=$\scriptstyle\oplus$}{}-[:30,,,,,lddbond]-[:-30]-[:30]} }}
+
+  \mStyle{– образование побочных σ-комплексов (карбкатионов), нестабилизированных резонансом (медленная, скорость-лимитирующая стадия):}
+
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]-[:30]}}}
+
+  \formul{\ce{\chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{\charge{-90=$⊕$}{}-[:30]-[:-30]=[:30]-[:-30]-[:30]}}}
+  
+  \mStyle{– образование продуктов 1,2- и 1,4-присоединения:}
+  
+  \formul{\ce{\chemfig{=[:30]-[:-30]\charge{-90=$⊕$}{}-[:30]-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{=[:30]-[:-30](-[:-90]Br)-[:30]-[:-30]-[:30]}}}
+
+ \formul{\ce{\chemfig{\charge{-90=$⊕$}{}-[:30]=[:-30]-[:30]-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{(-[:150]Br)-[:30]=[:-30]-[:30]-[:-30]-[:30]}}}
+
+  \formul{\ce{\chemfig{-[:30]\charge{90=$⊕$}{}-[:-30]=[:30]-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{-[:30](-[:90]Br)-[:-30]=[:30]-[:-30]-[:30]}}}
+
+\formul{\ce{\chemfig{-[:30]=[:-30]-[:30]\charge{90=$⊕$}{}-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{-[:30]=[:-30]-[:30](-[:90]Br)-[:-30]-[:30]}}}
+
+  \mStyle{– образование побочных продуктов 1,2-присоединения:}
+
+  \formul{\ce{\chemfig{=[:30]-[:-30]-[:30]\charge{90=$⊕$}{}-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{=[:30]-[:-30]-[:30](-[:90]Br)-[:-30]-[:30]}}}
+
+  \formul{\ce{\chemfig{\charge{-90=$⊕$}{}-[:30]-[:-30]=[:30]-[:-30]-[:30]} ->[\text{$Br^⊖$}] \chemfig{(-[:150]Br)-[:30]-[:-30]=[:30]-[:-30]-[:30]}}}
+}
+
+
+\newpage
+
+\reaction{Мононитрование метилбензола}{
+  \mStyle{При мононитровании метилбензола(толуола) в сернокислом растворе в качестве основного продукта образуется орто-нитротолуол(1\nobreakdash-нитро\nobreakdash-2-метилтолуол), а в качестве побочных продуктов - пара\nobreakdash-нитротолуол (1\nobreakdash-нитро\nobreakdash-4\nobreakdash-метилтолуол) и\\ мета\nobreakdash-нитротолуол (1\nobreakdash-нитро\nobreakdash-3\nobreakdash-метилтолуол)}
+  \formul{\ce{\chemfig{**6(-(-[:-90])-----)} ->[$\fontsize{13pt}{13pt}\selectfont\mathrm{HNO_3}$][\parbox{16px}{\fontsize{8pt}{8pt}\selectfont$H_2SO_4$ -$H_2O$}] \chemfig{**6(-(-[:-90])-(-[:-30]NO_2)----)} + \chemfig{**6(-(-[:-90])---(-[:90]NO_2)--)} + \chemfig{**6(-(-[:-90])--(-[:30]NO_2)---)}}}
+}{\mStyle{Реакция протекает по механизму электрофильного замещения ($S_E$) и включает следующие стадии:}
+  \mStyle{– активация электрофила:}
+  
+  \formul{\ce{2HNO_3 <--> H_2NO_3^$⊕$ + NO_3^$⊖$ <-->[][-H_2O] NO_2^$⊕$ + NO_3^$⊖$}}
+
+  \formul{\ce{HNO_3 <-->[H_2SO_4][\text{$-HSO_4^⊖$}] H_2NO_3^$⊕$ <-->[][-H_2O] NO_2^$⊕$}}
+  
+  \mStyle{– образование π-комплекса:}
+  
+  \formul{\ce{\chemfig{**6(-(-[:-90])-----)} <-->[\text{$NO_2^⊕$}] \chemfig{**6(-(-[:-90])-----)}\chemmove{
+    \node[at=(cyclecenter1)](){}
+    node [at=(cyclecenter1),shift=(0:1.9cm)](end){\printatom{\text{$NO_2^⊕$}}};
+    \draw[->,shorten <=.5cm](cyclecenter1)--(end);
+}}}
+  \mStyle{– образование σ-комплексов, стабилизированных за счет резонанса:}
+  
+  \formul{\ce{\chemfig{**6(-(-[:-90])-----)}\chemmove{%
+    \node[at=(cyclecenter1)](){}
+    node [at=(cyclecenter1),shift=(0:1.9cm)](end){\printatom{\text{$NO_2^⊕$}}};
+    \draw[->,shorten <=.5cm](cyclecenter1)--(end);
+  }\phantom{aawww} ->\phantom{aa} \chemfig{*6(=(-[:-90])-=-(-[:90]NO_2)-\charge{-180=$⊕$}{}-)} <-> \chemfig{*6(-\charge{-50=$⊕$}{}(-[:-90])-=-(-[:90]NO_2)-=)} <-> \chemfig{*6(-(-[:-90])=-\charge{0=$⊕$}{}-(-[:90]NO_2)-=)}}}
+
+\formul{\ce{\chemfig{**6(-(-[:-90])-----)}\chemmove{%
+    \node[at=(cyclecenter1)](){}
+    node [at=(cyclecenter1),shift=(0:1.9cm)](end){\printatom{\text{$NO_2^⊕$}}};
+    \draw[->,shorten <=.5cm](cyclecenter1)--(end);
+  }\phantom{aawww} ->\phantom{aa} \chemfig{*6(-\charge{-50=$⊕$}{}(-[:-90])-(-[:-30]NO_2)=-=-)} <-> \chemfig{*6(-(-[:-90])=(-[:-30]NO_2)-\charge{-50=$⊕$}{}(-[:-90])-=-)} <->\\<-> \chemfig{*6(-(-[:-90])=(-[:-30]NO_2)-=-\charge{-180=$⊕$}{}-)}}}
+
+\formul{\ce{\chemfig{**6(-(-[:-90])-----)}\chemmove{%
+    \node[at=(cyclecenter1)](){}
+    node [at=(cyclecenter1),shift=(0:1.9cm)](end){\printatom{\text{$NO_2^⊕$}}};
+    \draw[->,shorten <=.5cm](cyclecenter1)--(end);
+  }\phantom{aawww} -> \chemfig{*6(=(-[:-90])-=(-[:30]NO_2)-\charge{90=$⊕$}{}--)} <-> \phantom{aa}} \chemfig{*6(-(-[:-90])=\charge{0=$⊕$}{}-(-[:30]NO_2)---)} <-> \phantom{aa}} \chemfig{*6(-(-[:-90])=\charge{90=$⊕$}{}-(-[:30]NO_2)---)}}
+  \mStyle{– образование продукта за счет выброса протона, сопровождающегося восстановлением ароматичности:}
+  
+  \formul{\ce{\chemfig{*6(=(-[:-90])-=-(-[:90]NO_2)-\charge{-180=$⊕$}{}-)} ->[$\mathrm{H_2O}$][$\mathrm{-H_3O^⊕}$] \chemfig{**6(-(-[:-90])---(-[:90]NO_2)--)}}}
+
+  \formul{\ce{\chemfig{*6(-\charge{-50=$⊕$}{}(-[:-90])-(-[:-30]NO_2)=-=-)} ->[$\mathrm{H_2O}$][$\mathrm{-H_3O^⊕}$] \chemfig{**6(-(-[:-90])-(-[:-30]NO_2)----)}}}
+
+  \formul{\ce{\chemfig{*6(=(-[:-90])-=(-[:30]NO_2)-\charge{90=$⊕$}{}--)} ->[$\mathrm{H_2O}$][\text{$\mathrm{-H_3O^⊕}$}] \chemfig{**6(-(-[:-90])--(-[:30]NO_2)---)}}}
+  
+}
+
+\end{document}
