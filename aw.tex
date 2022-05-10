@@ -14,6 +14,7 @@
 \usepackage{chemfig}
 
 \usepackage{graphicx}
+\usepackage{pdfpages}
 
 \usepackage{setspace}
 
@@ -74,16 +75,7 @@
 }
   
 \begin{document}
-\begin{titloid}
-  \fontsize{12pt}{12pt}\selectfont
-  \school{Высшая школа естественных наук и технологий}
-  \fontsize{13pt}{13pt}\selectfont
-  \work{КОНТРОЛЬНАЯ РАБОТА}
-  \fontsize{13pt}{13pt}\selectfont
-  \theme{Органическая химия}{Механизмы органических реакций}
-  
-    \core{ППРПРПАРА}{18.03.01 Химическая технология}{2}{301015}{Вешняков Вячеслав Александрович, проф., к.х.н.}{В.А. Вешняков} 
-  \end{titloid}
+  \includepdf[pages=-]{titul.pdf}
 
   \newpage
 
@@ -193,13 +185,13 @@
   
   \mStyle{– образование σ-комплексов (карбкатионов аллильного типа), стабилизированных резонансом (медленная, скорость-лимитирующая стадия):}
   
-  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]\charge{-90=$\scriptstyle\oplus$}{}-[:30]-[:-30]-[:30]} <-> \\\\ <-> \chemfig{\charge{-90=$\scriptstyle\oplus$}{}-[:30]=[:-30]-[:30]-[:-30]-[:30]} \text{≡} \chemfig{\text{\charge{-90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:30,,,,,rddbond]-[:-30,,,,,rddbond]\text{\charge{-90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:30]-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30,,,,,rddbond]\text{\charge{-90=$\scriptstyle\oplus$}{}}-[:-30,,,,,rddbond]-[:30]-[:-30]-[:30]} }}
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]\charge{-90=$⊕$}{}-[:30]-[:-30]-[:30]} <-> \\\\ <-> \chemfig{\charge{-90=$⊕$}{}-[:30]=[:-30]-[:30]-[:-30]-[:30]} \text{≡} \chemfig{\text{\charge{-90:4pt=$\frac{1}{2}⊕$}{}}-[:30,,,,,rddbond]-[:-30,,,,,rddbond]\text{\charge{-90:4pt=$\frac{1}{2}⊕$}{}}-[:30]-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30,,,,,rddbond]\text{\charge{-90:4pt=$⊕$}{}}-[:-30,,,,,rddbond]-[:30]-[:-30]-[:30]} }}
 %\\\\
-  \formul{\ce{\chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]=[:30]-[:-30]-[:30]} <-> \\\\\\ <-> \chemfig{-[:30]=[:-30]-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]-[:30]} \text{≡} \chemfig{-[:30]\text{\charge{90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:-30,,,,,lddbond]-[:30,,,,,lddbond]\text{\charge{90:4pt=$\frac{1}{2}\scriptstyle\oplus$}{}}-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30]-[:-30,,,,,lddbond]\charge{90=$\scriptstyle\oplus$}{}-[:30,,,,,lddbond]-[:-30]-[:30]} }}
+  \formul{\ce{\chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{-[:30]\charge{90=$⊕$}{}-[:-30]=[:30]-[:-30]-[:30]} <-> \\\\\\ <-> \chemfig{-[:30]=[:-30]-[:30]\charge{90=$⊕$}{}-[:-30]-[:30]} \text{≡} \chemfig{-[:30]\text{\charge{90:4pt=$\frac{1}{2}⊕$}{}}-[:-30,,,,,lddbond]-[:30,,,,,lddbond]\text{\charge{90:4pt=$\frac{1}{2}⊕$}{}}-[:-30]-[:30]} \text{≡} \\\\ \text{≡} \chemfig{-[:30]-[:-30,,,,,lddbond]\charge{90:4pt=$⊕$}{}-[:30,,,,,lddbond]-[:-30]-[:30]} }}
 
   \mStyle{– образование побочных σ-комплексов (карбкатионов), нестабилизированных резонансом (медленная, скорость-лимитирующая стадия):}
 
-  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]-[:30]\charge{90=$\scriptstyle\oplus$}{}-[:-30]-[:30]}}}
+  \formul{\ce{\chemfig{=[:30]-[:-30]=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{=[:30]-[:-30]-[:30]\charge{90=$⊕$}{}-[:-30]-[:30]}}}
 
   \formul{\ce{\chemfig{=[:30,.5](-[:-30,0.7,,,->]H-[:-30,0.7,,,]Br)=[:30,.5]-[:-30]=[:30]-[:-30]-[:30]} ->[][\text{$-Br^⊖$}] \chemfig{\charge{-90=$⊕$}{}-[:30]-[:-30]=[:30]-[:-30]-[:30]}}}
   
